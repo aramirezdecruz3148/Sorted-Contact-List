@@ -2,6 +2,7 @@ import Component from './Component.js';
 import Header from './Header.js';
 import ContactTable from './ContactTable.js';
 import contacts from '../../data/contacts.js';
+import Sort from './Sort.js';
 
 class App extends Component {
     render() {
@@ -9,9 +10,12 @@ class App extends Component {
         
         const header = new Header();
         const headerDOM = header.render();
-
         const main = dom.querySelector('main');
         dom.insertBefore(headerDOM, main);
+        
+        const sort = new Sort();
+        const sortDOM = sort.render();
+        main.appendChild(sortDOM);
 
         const contactTable = new ContactTable({ contacts });
         const tableDOM = contactTable.render();
