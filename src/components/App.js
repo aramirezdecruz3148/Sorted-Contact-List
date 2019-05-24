@@ -3,6 +3,7 @@ import Header from './Header.js';
 import ContactTable from './ContactTable.js';
 import contacts from '../../data/contacts.js';
 import Sort from './Sort.js';
+import sortTable from '../../src/sort-table.js';
 
 class App extends Component {
     render() {
@@ -14,8 +15,9 @@ class App extends Component {
         dom.insertBefore(headerDOM, main);
         
         const sort = new Sort({
-            onSort: sort => {
-                console.log(sort);
+            onSort: sortOptions => {
+                const sorted = sortTable(contacts, sortOptions);
+                contactTable.update({ contacts: sorted });
             }
         });
         const sortDOM = sort.render();
