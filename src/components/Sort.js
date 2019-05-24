@@ -1,9 +1,25 @@
 import Component from './Component.js';
 
 class Sort extends Component {
+    render() {
+        const dom = this.renderDOM();
+        const form = dom.querySelector('form');
+
+        form.addEventListener('submit', event => event.preventDefault());
+        
+        form.addEventListener('input', () => {
+            const formData = new FormData(form);
+            const sortOptions = {
+                property: formData.get('property')
+            };
+            this.props.onSort(sortOptions);
+        });
+        return dom;
+    }
 
     renderTemplate() {
         return /*html*/`
+        <section>
             <form class="sort">
                 <label>
                     Sort by:
@@ -14,6 +30,7 @@ class Sort extends Component {
                     </select>
                 </label>
             </form>
+        </section>
         `;
     }
 }

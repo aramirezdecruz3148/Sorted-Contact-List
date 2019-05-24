@@ -13,7 +13,11 @@ class App extends Component {
         const main = dom.querySelector('main');
         dom.insertBefore(headerDOM, main);
         
-        const sort = new Sort();
+        const sort = new Sort({
+            onSort: sort => {
+                console.log(sort);
+            }
+        });
         const sortDOM = sort.render();
         main.appendChild(sortDOM);
 
