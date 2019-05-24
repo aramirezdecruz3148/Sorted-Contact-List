@@ -40,3 +40,15 @@ test('sort on first name', assert => {
     // assert
     assert.deepEqual(sorted, [example1, example3, example2]);
 });
+
+test('sort on last name', assert => {
+    // arrange
+    const sortOptions = {
+        property: 'lastName'
+    };
+
+    const sorted = sortTable(contacts, sortOptions);
+    // act
+    // assert
+    assert.deepEqual(sorted, [example2, example3, example1]);
+});
