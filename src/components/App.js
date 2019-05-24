@@ -1,6 +1,7 @@
 import Component from './Component.js';
 import Header from './Header.js';
 import ContactTable from './ContactTable.js';
+import contacts from '../../data/contacts.js';
 
 class App extends Component {
     render() {
@@ -12,7 +13,7 @@ class App extends Component {
         const main = dom.querySelector('main');
         dom.insertBefore(headerDOM, main);
 
-        const contactTable = new ContactTable();
+        const contactTable = new ContactTable({ contacts });
         const tableDOM = contactTable.render();
         main.appendChild(tableDOM);
         
