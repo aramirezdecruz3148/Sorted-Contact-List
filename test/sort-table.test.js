@@ -52,3 +52,15 @@ test('sort on last name', assert => {
     // assert
     assert.deepEqual(sorted, [example2, example3, example1]);
 });
+
+test('sort on company name', assert => {
+    // arrange
+    const sortOptions = {
+        property: 'company'
+    };
+
+    const sorted = sortTable(contacts, sortOptions);
+    // act
+    // assert
+    assert.deepEqual(sorted, [example1, example3, example2]);
+});
