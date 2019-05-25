@@ -24,6 +24,7 @@ class Sort extends Component {
                 <label>
                     Sort by:
                     <select name="property">
+                        <option value="">Order of input</option>
                         <option value="firstName">First Name</option>
                         <option value="lastName">Last Name</option>
                         <option value="company">Company</option>

@@ -17,7 +17,7 @@ class ContactTable extends Component {
     renderTemplate() {
         return /*html*/`
             <table>
-                <tr>
+                <tr class="head">
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Company</th>
